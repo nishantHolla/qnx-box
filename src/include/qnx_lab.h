@@ -12,6 +12,7 @@ int qnx_hello(int argc, char** argv, char** envp);
 int qnx_lab_fork(int argc, char** argv, char** envp);
 int qnx_lab_exec(int argc, char** argv, char** envp);
 int qnx_lab_spawn(int argc, char** argv, char** envp);
+int qnx_lab_zombie(int argc, char** argv, char** envp);
 int qnx_lab_pulse(int argc, char** argv, char** envp);
 
 static QNX_Lab qnx_labs[] = {
@@ -19,9 +20,10 @@ static QNX_Lab qnx_labs[] = {
   { .name = "fork",  .entry_point = qnx_lab_fork  },
   { .name = "exec",  .entry_point = qnx_lab_exec  },
   { .name = "spawn", .entry_point = qnx_lab_spawn },
+  { .name = "zombie", .entry_point = qnx_lab_zombie },
   { .name = "pulse", .entry_point = qnx_lab_pulse }
 };
 static const int QNX_LAB_COUNT = sizeof(qnx_labs) / sizeof(QNX_Lab);
-static const char DEFAULT_ENTRY_POINT_NAME[] = "pulse";
+static const char DEFAULT_ENTRY_POINT_NAME[] = "zombie";
 
 #endif // !QNX_LAB_H_
