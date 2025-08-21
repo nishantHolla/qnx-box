@@ -24,6 +24,6 @@ static QNX_Lab qnx_labs[] = {
   { .name = "pulse", .entry_point = qnx_lab_pulse }
 };
 static const int QNX_LAB_COUNT = sizeof(qnx_labs) / sizeof(QNX_Lab);
-static const char DEFAULT_ENTRY_POINT_NAME[] = "zombie";
+static const char DEFAULT_ENTRY_POINT_NAME[] = "pulse";
 
 #endif // !QNX_LAB_H_
