@@ -17,6 +17,7 @@ int qnx_lab_pulse(int argc, char** argv, char** envp);
 int qnx_lab_thread(int argc, char** argv, char** envp);
 int qnx_lab_thread_term(int argc, char** argv, char** envp);
 int qnx_lab_assignment_1(int argc, char** argv, char** envp);
+int qnx_lab_mutex(int argc, char** argv, char** envp);
 
 static QNX_Lab qnx_labs[] = {
   { .name = "hello", .entry_point = qnx_hello     },
@@ -27,9 +28,10 @@ static QNX_Lab qnx_labs[] = {
   { .name = "pulse", .entry_point = qnx_lab_pulse },
   { .name = "thread", .entry_point = qnx_lab_thread },
   { .name = "thread_term", .entry_point = qnx_lab_thread_term },
-  { .name = "assignment_1", .entry_point = qnx_lab_assignment_1 }
+  { .name = "assignment_1", .entry_point = qnx_lab_assignment_1 },
+  { .name = "mutex", .entry_point = qnx_lab_mutex }
 };
 static const int QNX_LAB_COUNT = sizeof(qnx_labs) / sizeof(QNX_Lab);
-static const char DEFAULT_ENTRY_POINT_NAME[] = "pulse";
+static const char DEFAULT_ENTRY_POINT_NAME[] = "mutex";
 
 #endif // !QNX_LAB_H_
