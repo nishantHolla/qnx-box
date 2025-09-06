@@ -8,6 +8,8 @@
  * Each thread should process a different part of an array and the main thread
  * should wait for all threads to complete using pthread_join.
  */
+#include "qnx_lab.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
@@ -23,24 +25,10 @@ typedef struct ThreadArgs {
   int thread_id;
 } ThreadArgs_t;
 
-void* double_array(void* args) {
-  ThreadArgs_t* data = (ThreadArgs_t*) args;
+static void* double_array(void* args);
+static void print_array(int* array, int n);
 
-  for (int i = data->start_idx, e = data->start_idx + data->length; i < e; ++i) {
-    data->array[i] *= 2;
-  }
-
-  return NULL;
-}
-
-void print_array(int* array, int n) {
-  for (int i = 0; i < n; ++i) {
-    printf("%02d ", array[i]);
-  }
-  printf("\n");
-}
-
-int qnx_lab_assignment_1(void) {
+int qnx_lab_assignment_1(int argc, char** argv, char** envp) {
   pthread_t* threads = (pthread_t*) malloc(sizeof(pthread_t) * THREAD_COUNT);
   ThreadArgs_t* thread_args = (ThreadArgs_t*) malloc(sizeof(ThreadArgs_t) * THREAD_COUNT);
 
@@ -75,4 +63,21 @@ int qnx_lab_assignment_1(void) {
   free(thread_args);
   free(array);
   return EXIT_SUCCESS;
+}
+
+static void* double_array(void* args) {
+  ThreadArgs_t* data = (ThreadArgs_t*) args;
+
+  for (int i = data->start_idx, e = data->start_idx + data->length; i < e; ++i) {
+    data->array[i] *= 2;
+  }
+
+  return NULL;
+}
+
+static void print_array(int* array, int n) {
+  for (int i = 0; i < n; ++i) {
+    printf("%02d ", array[i]);
+  }
+  printf("\n");
 }
