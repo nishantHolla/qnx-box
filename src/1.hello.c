@@ -10,10 +10,7 @@
 #include <stdlib.h>
 
 int qnx_hello(int argc, char** argv, char** envp) {
-  (void) argc, (void) argv, (void) envp;
-
 	printf("Hello, world.\n");
 
 	return EXIT_SUCCESS;
 }
-
