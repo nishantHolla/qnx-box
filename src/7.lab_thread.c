@@ -11,17 +11,14 @@
 #include <pthread.h>
 #include <unistd.h>
 
-void* thread_function(void* args) {
-	printf("thraed: Hello from the thread! Argument = %s\n", (char*)args);
-	return NULL;
-}
+void* thread_work(void* args);
 
 int qnx_lab_thread(int argc, char** argv, char** envp) {
 	pthread_t thread;
 	const char* message = "QNX Thread Example";
 	printf("main: Creating thread...\n");
 
-	if (pthread_create(&thread, NULL, thread_function, (void*)message) != 0) {
+	if (pthread_create(&thread, NULL, thread_work, (void*)message) != 0) {
 		fprintf(stderr, "main: Failed to create thread\n");
 		exit(EXIT_FAILURE);
 	}
@@ -32,4 +29,9 @@ int qnx_lab_thread(int argc, char** argv, char** envp) {
 	}
 
 	return EXIT_SUCCESS;
+}
+
+void* thread_work(void* args) {
+	printf("thraed: Hello from the thread! Argument = %s\n", (char*)args);
+	return NULL;
 }
