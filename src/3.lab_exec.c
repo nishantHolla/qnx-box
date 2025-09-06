@@ -12,8 +12,6 @@
 #include <sys/wait.h>
 
 int qnx_lab_exec(int argc, char** argv, char** envp) {
-  (void) argc, (void) argv, (void) envp;
-
 	pid_t pid = fork();
 
 	if (pid == 0) {
@@ -29,4 +27,3 @@ int qnx_lab_exec(int argc, char** argv, char** envp) {
 
 	return EXIT_SUCCESS;
 }
-
