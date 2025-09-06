@@ -12,8 +12,6 @@
 #include <sys/wait.h>
 
 int qnx_lab_fork(int argc, char** argv, char** envp) {
-  (void) argc, (void) argv, (void) envp;
-
 	printf("Parent Process (Pid: %d)\n", getpid());
 	pid_t pid = fork();
 
@@ -29,4 +27,3 @@ int qnx_lab_fork(int argc, char** argv, char** envp) {
 
 	return EXIT_SUCCESS;
 }
-
