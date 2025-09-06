@@ -11,7 +11,7 @@
 #include <pthread.h>
 #include <unistd.h>
 
-void* thread_work(void* args);
+static void* thread_work(void* args);
 
 int qnx_lab_thread(int argc, char** argv, char** envp) {
 	pthread_t thread;
@@ -31,7 +31,7 @@ int qnx_lab_thread(int argc, char** argv, char** envp) {
 	return EXIT_SUCCESS;
 }
 
-void* thread_work(void* args) {
+static void* thread_work(void* args) {
 	printf("thraed: Hello from the thread! Argument = %s\n", (char*)args);
 	return NULL;
 }
