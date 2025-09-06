@@ -14,8 +14,6 @@
 #include <sys/procmgr.h>
 
 int qnx_lab_pulse(int argc, char** argv, char** envp) {
-  (void) argc, (void) argv, (void) envp;
-
   int chid, coid;
   int ret;
   struct _pulse pulse;
