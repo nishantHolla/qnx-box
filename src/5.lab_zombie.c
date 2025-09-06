@@ -16,8 +16,6 @@
 #include <sys/wait.h>
 
 int qnx_lab_zombie(int argc, char **argv, char **envp) {
-  (void) argc, (void) argv;
-
   pid_t pid;
   int child_status;
   int ret;
