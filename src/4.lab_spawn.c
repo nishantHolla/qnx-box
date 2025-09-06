@@ -10,10 +10,7 @@
 #include <stdlib.h>
 #include <spawn.h>
 
-
 int qnx_lab_spawn(int argc, char** argv, char** envp) {
-  (void) argc, (void) argv, (void) envp;
-
   pid_t pid;
   char* spawn_args[] = {"main", "hello", NULL};
 
