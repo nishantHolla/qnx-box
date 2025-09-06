@@ -4,44 +4,17 @@
  *  Created on: Aug 28, 2025
  *      Author: nishant
  */
+#include "qnx_lab.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <pthread.h>
 #include <unistd.h>
 #include <signal.h>
 
-void* thread_func_cancel(void* args) {
-  printf("thread_func_cancel: started\n");
-
-  while (1) {
-    printf("thread_func_cancel: running...\n");
-    sleep(1);
-    pthread_testcancel();
-  }
-
-  return NULL;
-}
-
-void* thread_func_exit(void* args) {
-  printf("thread_func_exit: started\n");
-
-  sleep(2);
-  printf("thread_func_exit: calling pthread_exit...\n");
-  pthread_exit(NULL);
-
-  return NULL;
-}
-
-void* thread_func_kill(void* args) {
-  printf("thread_func_kill: started\n");
-
-  while (1) {
-    printf("thread_func_kill: wailting to be killed...\n");
-    sleep(1);
-  }
-
-  return NULL;
-}
+static void* thread_func_cancel(void* args);
+static void* thread_func_exit(void* args);
+static void* thread_func_kill(void* args);
 
 int qnx_lab_thread_term(int argc, char** argv, char** envp) {
   pthread_t tid_cancel, tid_exit, tid_kill;
@@ -84,4 +57,37 @@ int qnx_lab_thread_term(int argc, char** argv, char** envp) {
   fflush(stdout);
 
   return EXIT_SUCCESS;
+}
+
+static void* thread_func_cancel(void* args) {
+  printf("thread_func_cancel: started\n");
+
+  while (1) {
+    printf("thread_func_cancel: running...\n");
+    sleep(1);
+    pthread_testcancel();
+  }
+
+  return NULL;
+}
+
+static void* thread_func_exit(void* args) {
+  printf("thread_func_exit: started\n");
+
+  sleep(2);
+  printf("thread_func_exit: calling pthread_exit...\n");
+  pthread_exit(NULL);
+
+  return NULL;
+}
+
+static void* thread_func_kill(void* args) {
+  printf("thread_func_kill: started\n");
+
+  while (1) {
+    printf("thread_func_kill: wailting to be killed...\n");
+    sleep(1);
+  }
+
+  return NULL;
 }
