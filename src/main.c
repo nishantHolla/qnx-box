@@ -1,9 +1,10 @@
 #include "qnx_lab.h"
+
 #include <stdlib.h>
 #include <stdio.h>
 #include <string.h>
 
-char* DEFAULT_ARGS[] = { "main", "condvar", NULL };
+char* DEFAULT_ARGS[] = { "main", "atomic", NULL };
 
 int main(int argc, char** argv, char** envp) {
   char** args = NULL;
