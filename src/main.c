@@ -3,19 +3,26 @@
 #include <stdio.h>
 #include <string.h>
 
-char* DEFAULT_ARGS[] = { "main", "mutex", "sync", NULL };
+char* DEFAULT_ARGS[] = { "main", "condvar", NULL };
 
 int main(int argc, char** argv, char** envp) {
-  char** args = DEFAULT_ARGS;
+  char** args = NULL;
   int arg_count = 0;
-
-  while (DEFAULT_ARGS[arg_count]) {
-    ++arg_count;
-  }
 
   if (argc > 1) {
     arg_count = argc;
     args = argv;
+  }
+  else {
+    args = DEFAULT_ARGS;
+    while (DEFAULT_ARGS[arg_count]) {
+      ++arg_count;
+    }
+  }
+
+  if (arg_count < 2) {
+    printf("Usage: main [lab_name] [...arguments]\n");
+    exit(EXIT_FAILURE);
   }
 
   for (int i = 0; i < QNX_LAB_COUNT; ++i) {
