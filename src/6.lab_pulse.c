@@ -31,7 +31,7 @@ int qnx_lab_pulse(int argc, char** argv, char** envp) {
     exit(EXIT_FAILURE);
   }
 
-  SIGEV_PULSE_INIT(&ev, coid, 10, 1, 0);
+  SIGEV_PULSE_INIT(&ev, coid, 10, 1, 0); // Priority = 10, Code = 1
   SIGEV_MAKE_UPDATEABLE(&ev);
 
   MsgRegisterEvent(&ev, SYSMGR_COID);
@@ -49,5 +49,10 @@ int qnx_lab_pulse(int argc, char** argv, char** envp) {
     if (pulse.code == 1) {
       printf("Process with pid: %d died\n", pulse.value.sival_int);
     }
+    else {
+      printf("Unexpected pulse code\n");
+    }
   }
+
+  return EXIT_SUCCESS;
 }
