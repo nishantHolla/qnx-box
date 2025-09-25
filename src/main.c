@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 
-char* DEFAULT_ARGS[] = { "main", "hw_handler_condvar", NULL };
+char* DEFAULT_ARGS[] = { "main", "producer_consumer", NULL };
 
 int main(int argc, char** argv, char** envp) {
   char** args = NULL;

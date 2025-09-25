@@ -23,6 +23,8 @@ int qnx_orange_problem(int argc, char** argv, char** envp);
 int qnx_lab_condvar(int argc, char** argv, char** envp);
 int qnx_lab_atomic(int argc, char** argv, char** envp);
 int qnx_lab_hw_handler_condvar(int argc, char** argv, char** envp);
+int qnx_lab_produce_consume(int argc, char** argv, char** envp);
+int qnx_lab_state_machine(int argc, char** argv, char** envp);
 
 static QNX_Lab qnx_labs[] = {
   { .name = "hello",              .entry_point = qnx_hello                  },
@@ -40,6 +42,8 @@ static QNX_Lab qnx_labs[] = {
   { .name = "condvar",            .entry_point = qnx_lab_condvar            },
   { .name = "atomic",             .entry_point = qnx_lab_atomic             },
   { .name = "hw_handler_condvar", .entry_point = qnx_lab_hw_handler_condvar },
+  { .name = "produce_consume",    .entry_point = qnx_lab_produce_consume    },
+  { .name = "state_machine",      .entry_point = qnx_lab_state_machine      },
 };
 static const int QNX_LAB_COUNT = sizeof(qnx_labs) / sizeof(QNX_Lab);
 
