@@ -44,7 +44,7 @@ int qnx_orange_problem(int argc, char** argv, char** envp) {
       use_mutex = 0;
     }
     else {
-      fprintf(stderr, "Usage: a.out [sync|no_sync]\n");
+      fprintf(stderr, "Usage: %s [sync|no_sync]\n", argv[0]);
       return 1;
     }
   }
