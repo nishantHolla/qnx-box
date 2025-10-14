@@ -25,25 +25,29 @@ int qnx_lab_atomic(int argc, char** argv, char** envp);
 int qnx_lab_hw_handler_condvar(int argc, char** argv, char** envp);
 int qnx_lab_produce_consume(int argc, char** argv, char** envp);
 int qnx_lab_state_machine(int argc, char** argv, char** envp);
+int qnx_lab_message_passing_client(int argc, char** argv, char** envp);
+int qnx_lab_message_passing_server(int argc, char** argv, char** envp);
 
 static QNX_Lab qnx_labs[] = {
-  { .name = "hello",              .entry_point = qnx_hello                  },
-  { .name = "fork",               .entry_point = qnx_lab_fork               },
-  { .name = "exec",               .entry_point = qnx_lab_exec               },
-  { .name = "spawn",              .entry_point = qnx_lab_spawn              },
-  { .name = "zombie",             .entry_point = qnx_lab_zombie             },
-  { .name = "pulse",              .entry_point = qnx_lab_pulse              },
-  { .name = "thread",             .entry_point = qnx_lab_thread             },
-  { .name = "thread_term",        .entry_point = qnx_lab_thread_term        },
-  { .name = "assignment_1",       .entry_point = qnx_lab_assignment_1       },
-  { .name = "mutex",              .entry_point = qnx_lab_mutex              },
-  { .name = "assignment_2",       .entry_point = qnx_lab_assignment_2       },
-  { .name = "orange_problem",     .entry_point = qnx_orange_problem         },
-  { .name = "condvar",            .entry_point = qnx_lab_condvar            },
-  { .name = "atomic",             .entry_point = qnx_lab_atomic             },
-  { .name = "hw_handler_condvar", .entry_point = qnx_lab_hw_handler_condvar },
-  { .name = "produce_consume",    .entry_point = qnx_lab_produce_consume    },
-  { .name = "state_machine",      .entry_point = qnx_lab_state_machine      },
+  { .name = "hello",                  .entry_point = qnx_hello                      },
+  { .name = "fork",                   .entry_point = qnx_lab_fork                   },
+  { .name = "exec",                   .entry_point = qnx_lab_exec                   },
+  { .name = "spawn",                  .entry_point = qnx_lab_spawn                  },
+  { .name = "zombie",                 .entry_point = qnx_lab_zombie                 },
+  { .name = "pulse",                  .entry_point = qnx_lab_pulse                  },
+  { .name = "thread",                 .entry_point = qnx_lab_thread                 },
+  { .name = "thread_term",            .entry_point = qnx_lab_thread_term            },
+  { .name = "assignment_1",           .entry_point = qnx_lab_assignment_1           },
+  { .name = "mutex",                  .entry_point = qnx_lab_mutex                  },
+  { .name = "assignment_2",           .entry_point = qnx_lab_assignment_2           },
+  { .name = "orange_problem",         .entry_point = qnx_orange_problem             },
+  { .name = "condvar",                .entry_point = qnx_lab_condvar                },
+  { .name = "atomic",                 .entry_point = qnx_lab_atomic                 },
+  { .name = "hw_handler_condvar",     .entry_point = qnx_lab_hw_handler_condvar     },
+  { .name = "produce_consume",        .entry_point = qnx_lab_produce_consume        },
+  { .name = "state_machine",          .entry_point = qnx_lab_state_machine          },
+  { .name = "message_passing_client", .entry_point = qnx_lab_message_passing_client },
+  { .name = "message_passing_server", .entry_point = qnx_lab_message_passing_server },
 };
 static const int QNX_LAB_COUNT = sizeof(qnx_labs) / sizeof(QNX_Lab);
 

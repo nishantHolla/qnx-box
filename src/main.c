@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 
-char* DEFAULT_ARGS[] = { "main", "producer_consumer", NULL };
+char* DEFAULT_ARGS[] = { "main", "message_passing_server", NULL };
 
 int main(int argc, char** argv, char** envp) {
   char** args = NULL;
