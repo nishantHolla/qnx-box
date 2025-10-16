@@ -29,6 +29,8 @@ int qnx_lab_message_passing_client(int argc, char** argv, char** envp);
 int qnx_lab_message_passing_server(int argc, char** argv, char** envp);
 int qnx_lab_assignment_3_client(int argc, char** argv, char** envp);
 int qnx_lab_assignment_3_server(int argc, char** argv, char** envp);
+int qnx_lab_pulse_client(int argc, char** argv, char** envp);
+int qnx_lab_pulse_server(int argc, char** argv, char** envp);
 
 static QNX_Lab qnx_labs[] = {
   { .name = "hello",                  .entry_point = qnx_hello                      },
@@ -52,6 +54,8 @@ static QNX_Lab qnx_labs[] = {
   { .name = "message_passing_server", .entry_point = qnx_lab_message_passing_server },
   { .name = "assignment_3_client",    .entry_point = qnx_lab_assignment_3_client    },
   { .name = "assignment_3_server",    .entry_point = qnx_lab_assignment_3_server    },
+  { .name = "pulse_client",           .entry_point = qnx_lab_pulse_client           },
+  { .name = "pulse_server",           .entry_point = qnx_lab_pulse_server           },
 };
 static const int QNX_LAB_COUNT = sizeof(qnx_labs) / sizeof(QNX_Lab);
 
