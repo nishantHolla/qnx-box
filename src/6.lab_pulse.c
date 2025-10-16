@@ -14,18 +14,16 @@
 #include <sys/procmgr.h>
 
 int qnx_lab_pulse(int argc, char** argv, char** envp) {
-  int chid, coid;
-  int ret;
   struct _pulse pulse;
   struct sigevent ev;
 
-  chid = ChannelCreate(_NTO_CHF_PRIVATE);
+  int chid = ChannelCreate(_NTO_CHF_PRIVATE);
   if (chid == -1) {
     fprintf(stderr, "Failed to create channel.\n");
     exit(EXIT_FAILURE);
   }
 
-  coid = ConnectAttach(0, 0, chid, _NTO_SIDE_CHANNEL, 0);
+  int coid = ConnectAttach(0, 0, chid, _NTO_SIDE_CHANNEL, 0);
   if (coid == -1) {
     fprintf(stderr, "Failed to connect to channel.\n");
     exit(EXIT_FAILURE);
@@ -39,6 +37,7 @@ int qnx_lab_pulse(int argc, char** argv, char** envp) {
 
   printf("Waiting for process death notification (Death Pulse) from the process manager.\n");
 
+  int ret = 0;
   while (1) {
     ret = MsgReceivePulse(chid, &pulse, sizeof(pulse), NULL);
     if (ret == -1) {
