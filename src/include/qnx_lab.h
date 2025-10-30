@@ -35,6 +35,8 @@ int qnx_lab_name_attach_client(int argc, char** argv, char** envp);
 int qnx_lab_name_attach_server(int argc, char** argv, char** envp);
 int qnx_lab_events_client(int argc, char** argv, char** envp);
 int qnx_lab_events_server(int argc, char** argv, char** envp);
+int qnx_lab_shm_posix_producer(int argc, char** argv, char** envp);
+int qnx_lab_shm_posix_consumer(int argc, char** argv, char** envp);
 
 static QNX_Lab qnx_labs[] = {
   { .name = "hello",                  .entry_point = qnx_hello                      },
@@ -64,6 +66,8 @@ static QNX_Lab qnx_labs[] = {
   { .name = "name_attach_server",     .entry_point = qnx_lab_name_attach_server     },
   { .name = "events_client",          .entry_point = qnx_lab_events_client          },
   { .name = "events_server",          .entry_point = qnx_lab_events_server          },
+  { .name = "shm_posix_producer",     .entry_point = qnx_lab_shm_posix_producer     },
+  { .name = "shm_posix_consumer",     .entry_point = qnx_lab_shm_posix_consumer     },
 };
 static const int QNX_LAB_COUNT = sizeof(qnx_labs) / sizeof(QNX_Lab);
 
