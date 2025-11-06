@@ -77,6 +77,7 @@ static QNX_Lab qnx_labs[] = {
   { .name = "interrupt_handler",       .entry_point = qnx_lab_interrupt_handler      },
   { .name = "shm_qnx_server",          .entry_point = qnx_lab_shm_qnx_server         },
   { .name = "shm_qnx_client",          .entry_point = qnx_lab_shm_qnx_client         },
+  { .name = "timer",                   .entry_point = qnx_lab_timer                  },
   { .name = "orange_problem_2_client", .entry_point = qnx_orange_problem_2_client    },
   { .name = "orange_problem_2_server", .entry_point = qnx_orange_problem_2_server    },
 };
