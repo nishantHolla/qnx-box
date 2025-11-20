@@ -11,7 +11,7 @@ OBJDIR    = build
 OUTDIR    = out
 
 CFLAGS += $(DEBUG) $(TARGET) -Wall -I$(INC_DIR) -MMD -MP
-LDFLAGS+= $(DEBUG) $(TARGET)
+LDFLAGS+= $(DEBUG) $(TARGET) -lsecpol
 
 # Find all .c files in src
 SRCS = $(wildcard $(SRC_DIR)/*.c)
