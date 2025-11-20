@@ -45,6 +45,7 @@ int qnx_orange_problem_2_client(int argc, char** argv, char** envp);
 int qnx_orange_problem_2_server(int argc, char** argv, char** envp);
 int qnx_lab_process_timer(int argc, char** argv, char** envp);
 int qnx_lab_time(int argc, char** argv, char** envp);
+int qnx_lab_resource_manager(int argc, char** argv, char** envp);
 
 static QNX_Lab qnx_labs[] = {
   { .name = "hello",                   .entry_point = qnx_hello                      },
@@ -84,6 +85,7 @@ static QNX_Lab qnx_labs[] = {
   { .name = "orange_problem_2_server", .entry_point = qnx_orange_problem_2_server    },
   { .name = "process_timer",           .entry_point = qnx_lab_process_timer          },
   { .name = "time",                    .entry_point = qnx_lab_time                   },
+  { .name = "resource_manager",        .entry_point = qnx_lab_resource_manager       }
 };
 static const int QNX_LAB_COUNT = sizeof(qnx_labs) / sizeof(QNX_Lab);
 
